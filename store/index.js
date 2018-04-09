@@ -8,10 +8,10 @@ const store = () => new Vuex.Store({
   },
   mutations: {
     update_necessary (state, value) {
-      state.necessary += eval(value)
+      if (value !== '') state.necessary += eval(value)
     },
     update_unnecessary (state, value) {
-      state.unnecessary += eval(value)
+      if (value !== '') state.unnecessary += eval(value)
     },
     reset (state) {
       state.necessary = 0
