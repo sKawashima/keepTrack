@@ -1,4 +1,4 @@
-importScripts('/_nuxt/workbox.dev.c21f51f2.js')
+importScripts('/keepTrack/_nuxt/workbox.dev.c21f51f2.js')
 
 const workboxSW = new self.WorkboxSW({
   "cacheId": "keepTrack",
@@ -8,33 +8,33 @@ const workboxSW = new self.WorkboxSW({
 
 workboxSW.precache([
   {
-    "url": "/_nuxt/app.30f762037494ced720a4.js",
-    "revision": "33ff766360064d815ef9186879931256"
+    "url": "/keepTrack/_nuxt/app.e6b18355edf956b56c31.js",
+    "revision": "7f15ad779fee7702e759831bc0a1883f"
   },
   {
-    "url": "/_nuxt/layouts/default.e50e9d13f3c71f9e1fb8.js",
-    "revision": "327bd4a833a0f23ca232e534782b8ff6"
+    "url": "/keepTrack/_nuxt/layouts/default.0a804a3f7866142d8cc2.js",
+    "revision": "8a654febc3205d7c71d44016f17b3c66"
   },
   {
-    "url": "/_nuxt/manifest.ac5630a8fb7aed99b85d.js",
-    "revision": "874f965daebf5723e4dc2db32ceb030f"
+    "url": "/keepTrack/_nuxt/manifest.07305fd3c53c9c6aa8c1.js",
+    "revision": "27466fc11a16255ed0109681f5290537"
   },
   {
-    "url": "/_nuxt/pages/index.7f8e584c817f49f9d608.js",
-    "revision": "179f267590c3bff335253d1f399d0429"
+    "url": "/keepTrack/_nuxt/pages/index.d336bd53b29433aa3339.js",
+    "revision": "a41496c6d79f0ea6edaaa1a5af7b3df6"
   },
   {
-    "url": "/_nuxt/pages/input.295ad52dc3d73e5ce2bc.js",
+    "url": "/keepTrack/_nuxt/pages/input.295ad52dc3d73e5ce2bc.js",
     "revision": "4c973262ce512303957db379c46c764a"
   },
   {
-    "url": "/_nuxt/vendor.f853928c7a9283fcf0f3.js",
+    "url": "/keepTrack/_nuxt/vendor.f853928c7a9283fcf0f3.js",
     "revision": "5f12eee8632a2e08149edd8973225a6a"
   }
 ])
 
 
-workboxSW.router.registerRoute(new RegExp('/_nuxt/.*'), workboxSW.strategies.cacheFirst({}), 'GET')
+workboxSW.router.registerRoute(new RegExp('/keepTrack/_nuxt/.*'), workboxSW.strategies.cacheFirst({}), 'GET')
 
-workboxSW.router.registerRoute(new RegExp('/.*'), workboxSW.strategies.networkFirst({}), 'GET')
+workboxSW.router.registerRoute(new RegExp('/keepTrack/.*'), workboxSW.strategies.networkFirst({}), 'GET')
 
