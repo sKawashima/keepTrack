@@ -2,7 +2,7 @@
 .container
   .field
     label.label 出費金額（円, 計算可）
-    input.input(type='text' placeholder='300' v-model='statistic')
+    input.input(type='number' placeholder='300' v-model='statistic')
     p.calced
       | =
       span  {{evaledStatistic}}
