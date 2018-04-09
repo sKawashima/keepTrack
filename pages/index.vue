@@ -30,6 +30,10 @@ export default {
       'necessary': 10000,
       'unnecessary': 2000
     }
+  },
+  mounted () {
+    this.necessary = this.$store.state.necessary
+    this.unnecessary = this.$store.state.unnecessary
   }
 }
 </script>
