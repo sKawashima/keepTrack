@@ -1,59 +1,82 @@
-<template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        keepTrack
-      </h1>
-      <h2 class="subtitle">
-        My First PWA
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+<template lang='pug'>
+.container
+  #statistics
+    h2 出費合計
+    p {{ necessary + unnecessary }}円
+  #graph
+    .bar.necessary(v-bind:style = "{ flexGrow: necessary }")
+    .bar.unnecessary(v-bind:style = "{ flexGrow: unnecessary }")
+  #expense
+    .item
+      h3 必要出費
+      p {{ necessary }}円
+    .item
+      h3 不要出費
+      p {{ unnecessary }}円
+  #input
+    nuxt-link(to='input').button.is-large.is-primary 入力
+    .button リセット
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Nav from '~/components/Nav.vue'
 
 export default {
   components: {
-    Logo
+    Nav
+  },
+  data () {
+    return {
+      'necessary': 10000,
+      'unnecessary': 2000
+    }
   }
 }
 </script>
 
-<style>
+<style lang='sass' scoped>
 .container
-{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-.subtitle
-{
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-.links
-{
-  padding-top: 15px;
-}
+  min-height: calc(100vh - 4rem)
+  width: 90vw
+  max-width: 768px
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  text-align: center
+  flex-flow: column
+  #statistics
+    margin: 3rem 0
+    font-weight: bold
+    display: flex
+    justify-content: center
+    align-items: baseline
+    h2
+      font-size: 1.5rem
+    p
+      margin-left: 1rem
+      font-size: 3rem
+  #graph
+    display: flex
+    width: 100%
+    margin: 0 0 1rem
+    .bar
+      height: 2rem
+    .necessary
+      background-color: hsl(141, 71%, 48%)
+    .unnecessary
+      background-color: hsl(348, 100%, 61%)
+  #expense
+    display: flex
+    justify-content: space-around
+    width: 100%
+    .item
+      padding: 1rem
+    p
+      font-size: 1.5em
+#input
+  display: flex
+  flex-flow: column
+  width: 100%
+  .button
+    margin-top: 2rem
 </style>
