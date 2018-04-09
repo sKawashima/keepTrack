@@ -49,7 +49,7 @@ export default {
 
 <style lang='sass' scoped>
 .container
-  min-height: calc(100vh - 4rem)
+  min-height: calc(100vh - 4rem - 4rem)
   width: 90vw
   max-width: 768px
   display: flex
@@ -58,7 +58,7 @@ export default {
   text-align: center
   flex-flow: column
   #statistics
-    margin: 3rem 0
+    margin: 2rem 0
     font-weight: bold
     display: flex
     justify-content: center
@@ -72,6 +72,7 @@ export default {
     display: flex
     width: 100%
     margin: 0 0 1rem
+    background-color: #888
     .bar
       height: 2rem
     .necessary
@@ -91,5 +92,5 @@ export default {
   flex-flow: column
   width: 100%
   .button
-    margin-top: 2rem
+    margin-top: 1rem
 </style>
