@@ -2,6 +2,10 @@
 https://skawashima.github.io/keepTrack/
 > My First PWA
 
+## input/input-typeについて
+`type='number'`にすれば、スマホでの入力時に数値入力から入ることができる。
+しかし、今回では`eval`による四則計算を優先したため、`type='text'`指定にした。
+
 ## Build Setup
 
 ``` bash
