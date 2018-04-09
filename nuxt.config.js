@@ -86,6 +86,7 @@ module.exports = {
     'og:description': '必要・不必要を記録するシンプルな家計簿',
     lang: 'ja',
     theme_color: '#d6c726',
-    background_color: '#ffffff'
+    background_color: '#ffffff',
+    'display': 'standalone'
   }
 }
