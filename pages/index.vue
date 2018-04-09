@@ -14,7 +14,7 @@
       h3 不必要出費
       p {{ unnecessary }}円
   #input
-    .button.is-large.is-primary 入力
+    nuxt-link(to='input').button.is-large.is-primary 入力
     .button リセット
 </template>
 
