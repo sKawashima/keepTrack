@@ -7,11 +7,11 @@ const store = () => new Vuex.Store({
     unnecessary: 0
   },
   mutations: {
-    necessary (state, value) {
-      state.necessary += value
+    update_necessary (state, value) {
+      state.necessary += eval(value)
     },
-    unnecessary (state, value) {
-      state.unnecessary += value
+    update_unnecessary (state, value) {
+      state.unnecessary += eval(value)
     }
   }
 })
