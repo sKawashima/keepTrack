@@ -77,9 +77,9 @@ module.exports = {
     dir: 'docs'
   },
 
-  // router: {
-  //   base: '/keepTrack'
-  // },
+  router: {
+    base: '/keepTrack'
+  },
 
   workbox: {
     dev: true
