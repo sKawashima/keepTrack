@@ -1,7 +1,8 @@
 <template lang='pug'>
 nav
   nuxt-link(to='/').nav-contents.nav-title TOKT
-  p.nav-contents.nav-left powered by sK
+  p.nav-contents.nav-left made by&nbsp;
+    a(href='skawashima.com').mylink sKawashima
 </template>
 
 <script>
@@ -36,4 +37,9 @@ nav
     align-self: center
     &:hover
       background-color: saturate($yellow, 15%)
+  .mylink
+    color: $yellow
+    &:hover
+      color: lighten($yellow, 35%)
+
 </style>

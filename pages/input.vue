@@ -7,8 +7,10 @@
       | =
       span  {{evaledStatistic}}
     #submit
-      .button.is-success.is-large 必要出費
-      .button.is-danger.is-large 不要出費
+      nuxt-link(to='/')
+        .button.is-success.is-large(@click="$store.commit('update_necessary', statistic)") 必要出費
+      nuxt-link(to='/')
+        .button.is-danger.is-large(@click="$store.commit('update_unnecessary', statistic)") 不要出費
     nuxt-link(to='/').button.button-back 戻る
 </template>
 
@@ -56,5 +58,5 @@ export default {
     grid-gap: 1rem
     margin-top: 4rem
     .button
-      margin-top: 1rem
+      width: 100%
 </style>
