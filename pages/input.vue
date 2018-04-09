@@ -42,9 +42,9 @@ export default {
   width: 90vw
   max-width: 768px
   align-items: flex-start
+  padding-top: 2rem
 .field
   width: 100%
-  margin-top: 2rem
   .calced
     margin-top: .2rem
     font-size: 1.5rem
