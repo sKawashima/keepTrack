@@ -2,7 +2,7 @@
 .container
   .field
     label.label 出費金額（円, 計算可）
-    input.input(type='text' placeholder='300' v-model='statistic')
+    input.input(type='number' placeholder='300' v-model='statistic')
     p.calced
       | =
       span  {{evaledStatistic}}
@@ -53,6 +53,8 @@ export default {
   .button-back
     width: 100%
     margin-top: 2rem
+  .is-large
+    font-size: 1.3rem
   #submit
     display: grid
     grid-template-columns: 1fr 1fr

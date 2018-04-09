@@ -14,7 +14,7 @@
       h3 不要出費
       p {{ unnecessary }}円
   #input
-    nuxt-link(to='input').button.is-large.is-primary 入力
+    nuxt-link(to='input').button.is-large.main 入力
     .button(@click='reset') リセット
 </template>
 
@@ -32,8 +32,7 @@ export default {
     }
   },
   mounted () {
-    this.necessary = this.$store.state.necessary
-    this.unnecessary = this.$store.state.unnecessary
+    this.getDB()
   },
   methods: {
     reset: function () {
@@ -42,12 +41,22 @@ export default {
         this.necessary = this.$store.state.necessary
         this.unnecessary = this.$store.state.unnecessary
       }
+    },
+    getDB: function () {
+      if (this.$store.state.setDB) {
+        this.necessary = this.$store.state.necessary
+        this.unnecessary = this.$store.state.unnecessary
+      } else {
+        setInterval(this.getDB, 10)
+      }
     }
   }
 }
 </script>
 
 <style lang='sass' scoped>
+$yellow: #d6c726
+
 .container
   min-height: calc(100vh - 4rem - 4rem)
   width: 90vw
@@ -91,6 +100,14 @@ export default {
   display: flex
   flex-flow: column
   width: 100%
+  .main
+    color: grayscale(darken(#d6c726, 25%))
+    background-color: $yellow
+    font-weight: bold
+    transition: .1s
+    &:hover
+      border: 0
+      background-color: saturate($yellow, 40%)
   .button
     margin-top: 1rem
 </style>

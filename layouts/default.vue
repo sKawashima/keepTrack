@@ -8,11 +8,30 @@ div
 <script>
 import Nav from '~/components/Nav.vue'
 import Footer from '~/components/Footer.vue'
+import localforage from 'localforage'
 
 export default {
   components: {
     Nav,
     Footer
+  },
+  mounted () {
+    const db = localforage.createInstance({
+      name: 'TOKT'
+    })
+    db.getItem('statistics')
+      .then((value) => {
+        if (value) {
+          this.$store.commit('set_necessary', value)
+        } else {
+          db.setItem('statistics', [0, 0])
+            .then(() => {
+              this.$store.commit('set_necessary', [0, 0])
+            })
+            .catch((e) => {})
+        }
+      })
+      .catch((e) => {})
   }
 }
 </script>
