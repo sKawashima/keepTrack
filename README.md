@@ -1,6 +1,8 @@
 # keepTrack
-
 > My First PWA
+
+## publish
+https://skawashima.github.io/keepTrack/
 
 ## Build Setup
 
