@@ -35,6 +35,44 @@ export default {
   mounted () {
     this.necessary = this.$store.state.necessary
     this.unnecessary = this.$store.state.unnecessary
+    const db = localforage.createInstance({
+      driver: localforage.LOCALSTORAGE,
+      name: 'TOKT',
+      strageName: 'main',
+      version: 1
+    })
+    db.getItem('necessary')
+      .then ((value) => {
+        this.necessary = value
+        if (!value) {
+          db.setItem('necessary', 0)
+            .then(() => {
+              // console.log('success')
+            })
+            .error((e) => {
+              // console.log('error')
+            })
+        }
+      })
+      .catch((e) => {
+        // window.alert('Conection Error')
+      })
+    db.getItem('unnecessary')
+      .then ((value) => {
+        this.unnecessary = value
+        if (!value) {
+          db.setItem('unnecessary', 0)
+            .then(() => {
+              // console.log('success')
+            })
+            .error((e) => {
+              // console.log('error')
+            })
+        }
+      })
+      .catch((e) => {
+        // window.alert('Conection Error')
+      })
   },
   methods: {
     reset: function () {
@@ -49,6 +87,8 @@ export default {
 </script>
 
 <style lang='sass' scoped>
+$yellow: #d6c726
+
 .container
   min-height: calc(100vh - 4rem - 4rem)
   width: 90vw
@@ -93,8 +133,13 @@ export default {
   flex-flow: column
   width: 100%
   .main
-    background-color: #d6c726
+    color: grayscale(darken(#d6c726, 25%))
+    background-color: $yellow
     font-weight: bold
+    transition: .1s
+    &:hover
+      border: 0
+      background-color: saturate($yellow, 40%)
   .button
     margin-top: 1rem
 </style>
