@@ -6,8 +6,10 @@
     p.calced
       | =
       span  {{evaledStatistic}}
-    #push.button.is-primary.is-large 入力
-    nuxt-link(to='/').button 戻る
+    #submit
+      .button.is-success.is-large 必要出費
+      .button.is-danger.is-large 不要出費
+    nuxt-link(to='/').button.button-back 戻る
 </template>
 
 <script>
@@ -45,9 +47,14 @@ export default {
     font-size: 1.5rem
     span
       font-weight: bold
-  .button
+  .button-back
     width: 100%
     margin-top: 2rem
-  #push
+  #submit
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 1rem
     margin-top: 4rem
+    .button
+      margin-top: 1rem
 </style>

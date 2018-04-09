@@ -11,7 +11,7 @@
       h3 必要出費
       p {{ necessary }}円
     .item
-      h3 不必要出費
+      h3 不要出費
       p {{ unnecessary }}円
   #input
     nuxt-link(to='input').button.is-large.is-primary 入力
