@@ -16,6 +16,7 @@
     "@nuxtjs/bulma": "^1.0.3",
     "@nuxtjs/pwa": "^2.0.8",
     "font-awesome": "^4.7.0",
+    "localforage": "^1.7.1",
     "node-sass": "^4.8.3",
     "nuxt": "^1.0.0",
     "pug": "^2.0.3",
