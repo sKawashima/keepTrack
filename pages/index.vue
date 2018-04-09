@@ -27,8 +27,8 @@ export default {
   },
   data () {
     return {
-      'necessary': 1000,
-      'unnecessary': 200000
+      'necessary': 10000,
+      'unnecessary': 2000
     }
   }
 }
@@ -38,6 +38,7 @@ export default {
 .container
   min-height: calc(100vh - 4rem)
   width: 90vw
+  max-width: 768px
   display: flex
   justify-content: flex-start
   align-items: center
@@ -57,7 +58,6 @@ export default {
   #graph
     display: flex
     width: 100%
-    max-width: 748px
     margin: 0 0 1rem
     .bar
       height: 2rem

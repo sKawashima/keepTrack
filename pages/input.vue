@@ -35,6 +35,7 @@ export default {
 <style lang='sass' scoped>
 .container
   width: 90vw
+  max-width: 768px
   align-items: flex-start
 .field
   width: 100%
