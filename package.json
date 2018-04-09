@@ -14,8 +14,13 @@
   },
   "dependencies": {
     "@nuxtjs/bulma": "^1.0.3",
+    "@nuxtjs/font-awesome": "^1.0.3",
     "@nuxtjs/pwa": "^2.0.8",
-    "nuxt": "^1.0.0"
+    "node-sass": "^4.8.3",
+    "nuxt": "^1.0.0",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^6.0.7"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
