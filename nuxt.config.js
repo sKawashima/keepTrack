@@ -73,6 +73,14 @@ module.exports = {
     }
   },
 
+  generate: {
+    dir: 'docs'
+  },
+
+  router: {
+    base: '/keepTrack'
+  },
+
   workbox: {
     dev: true
   },
