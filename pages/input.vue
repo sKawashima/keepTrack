@@ -38,6 +38,7 @@ export default {
 
 <style lang='sass' scoped>
 .container
+  min-height: calc(100vh - 4rem - 4rem)
   width: 90vw
   max-width: 768px
   align-items: flex-start
