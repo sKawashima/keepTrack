@@ -31,7 +31,13 @@ export default {
             .catch((e) => {})
         }
       })
-      .catch((e) => {})
+      .catch((e) => {
+        db.setItem('statistics', [0, 0])
+          .then(() => {
+            this.$store.commit('set_necessary', [0, 0])
+          })
+          .catch((e) => {})
+      })
   }
 }
 </script>

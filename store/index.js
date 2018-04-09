@@ -8,13 +8,22 @@ const db = localforage.createInstance({
 function setDB(value) {
   db.setItem('statistics', value)
     .then(() => {
-      console.log('save')
+      // console.log('save')
     })
     .catch((e) => {
-      console.log('error')
+      // console.log('error')
     })
 }
 
+function resetDB() {
+  db.setItem('statistics', [0, 0])
+    .then(() => {
+      // console.log('save')
+    })
+    .catch((e) => {
+      // console.log('error')
+    })
+}
 const store = () => new Vuex.Store({
   state: {
     necessary: 0,
@@ -38,6 +47,7 @@ const store = () => new Vuex.Store({
     reset (state) {
       state.necessary = 0
       state.unnecessary = 0
+      resetDB()
     }
   }
 })

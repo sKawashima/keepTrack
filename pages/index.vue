@@ -27,8 +27,8 @@ export default {
   },
   data () {
     return {
-      'necessary': 10000,
-      'unnecessary': 2000
+      'necessary': 0,
+      'unnecessary': 0
     }
   },
   mounted () {
