@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     reset: function () {
-      if (confirm('本当にリセットしてよろしいですか？')) {
+      if (confirm('本当によろしいですか？')) {
         this.$store.commit('reset')
         this.necessary = this.$store.state.necessary
         this.unnecessary = this.$store.state.unnecessary
