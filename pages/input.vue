@@ -53,6 +53,8 @@ export default {
   .button-back
     width: 100%
     margin-top: 2rem
+  .is-large
+    font-size: 1.3rem
   #submit
     display: grid
     grid-template-columns: 1fr 1fr

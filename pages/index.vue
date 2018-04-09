@@ -14,12 +14,13 @@
       h3 不要出費
       p {{ unnecessary }}円
   #input
-    nuxt-link(to='input').button.is-large.is-primary 入力
+    nuxt-link(to='input').button.is-large.main 入力
     .button(@click='reset') リセット
 </template>
 
 <script>
 import Nav from '~/components/Nav.vue'
+import localforage from 'localforage'
 
 export default {
   components: {
@@ -91,6 +92,9 @@ export default {
   display: flex
   flex-flow: column
   width: 100%
+  .main
+    background-color: #d6c726
+    font-weight: bold
   .button
     margin-top: 1rem
 </style>
