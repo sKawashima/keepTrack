@@ -1,4 +1,4 @@
-importScripts('/keepTrack/_nuxt/workbox.dev.c21f51f2.js')
+importScripts('/_nuxt/workbox.dev.c21f51f2.js')
 
 const workboxSW = new self.WorkboxSW({
   "cacheId": "keepTrack",
@@ -8,33 +8,33 @@ const workboxSW = new self.WorkboxSW({
 
 workboxSW.precache([
   {
-    "url": "/keepTrack/_nuxt/app.f2bcfbd29f80c3f6ed4f.js",
-    "revision": "a31a541d2d3fecd72782d000e2587646"
+    "url": "/_nuxt/app.30f762037494ced720a4.js",
+    "revision": "33ff766360064d815ef9186879931256"
   },
   {
-    "url": "/keepTrack/_nuxt/layouts/default.3babb8b9616dc5c4d8cd.js",
-    "revision": "0497acb2394d6d6decf0be67e701cec2"
+    "url": "/_nuxt/layouts/default.e50e9d13f3c71f9e1fb8.js",
+    "revision": "327bd4a833a0f23ca232e534782b8ff6"
   },
   {
-    "url": "/keepTrack/_nuxt/manifest.c9c80024f3110ef98ea6.js",
-    "revision": "20dce770ca66aa91dc1b971d9e276d57"
+    "url": "/_nuxt/manifest.ac5630a8fb7aed99b85d.js",
+    "revision": "874f965daebf5723e4dc2db32ceb030f"
   },
   {
-    "url": "/keepTrack/_nuxt/pages/index.8169da054d5b5f4c1478.js",
-    "revision": "7b4897436a4f8ebf1a4b4a1c66d33253"
+    "url": "/_nuxt/pages/index.7f8e584c817f49f9d608.js",
+    "revision": "179f267590c3bff335253d1f399d0429"
   },
   {
-    "url": "/keepTrack/_nuxt/pages/input.36c0b6982e73ce288f49.js",
-    "revision": "2380f9f97e273b392565803d1ca32ce0"
+    "url": "/_nuxt/pages/input.295ad52dc3d73e5ce2bc.js",
+    "revision": "4c973262ce512303957db379c46c764a"
   },
   {
-    "url": "/keepTrack/_nuxt/vendor.3f5f0b622c5245ea2488.js",
-    "revision": "650d19d6f11db3e357d6da600e147a11"
+    "url": "/_nuxt/vendor.f853928c7a9283fcf0f3.js",
+    "revision": "5f12eee8632a2e08149edd8973225a6a"
   }
 ])
 
 
-workboxSW.router.registerRoute(new RegExp('/keepTrack/_nuxt/.*'), workboxSW.strategies.cacheFirst({}), 'GET')
+workboxSW.router.registerRoute(new RegExp('/_nuxt/.*'), workboxSW.strategies.cacheFirst({}), 'GET')
 
-workboxSW.router.registerRoute(new RegExp('/keepTrack/.*'), workboxSW.strategies.networkFirst({}), 'GET')
+workboxSW.router.registerRoute(new RegExp('/.*'), workboxSW.strategies.networkFirst({}), 'GET')
 
