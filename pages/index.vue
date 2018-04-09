@@ -34,15 +34,6 @@ export default {
   mounted () {
     this.necessary = this.$store.state.necessary
     this.unnecessary = this.$store.state.unnecessary
-    if (! 'caches' in window) {
-      alart('お使いのデバイスでは、デバイスへの金額の保存ができません。ご了承下さい。')
-    }
-    // caches.open('sk-tokt').then(function (cache) {
-    //   cache.put('necessary', $nuxt.necessary)
-    //   cache.keys().then(function(cachedRequests) {
-    //     console.log(cachedRequests); // [Request, Request]
-    //   })
-    // })
   },
   methods: {
     reset: function () {
