@@ -20,7 +20,6 @@
 
 <script>
 import Nav from '~/components/Nav.vue'
-import localforage from 'localforage'
 
 export default {
   components: {
@@ -35,44 +34,7 @@ export default {
   mounted () {
     this.necessary = this.$store.state.necessary
     this.unnecessary = this.$store.state.unnecessary
-    const db = localforage.createInstance({
-      driver: localforage.LOCALSTORAGE,
-      name: 'TOKT',
-      strageName: 'main',
-      version: 1
-    })
-    db.getItem('necessary')
-      .then ((value) => {
-        this.necessary = value
-        if (!value) {
-          db.setItem('necessary', 0)
-            .then(() => {
-              // console.log('success')
-            })
-            .error((e) => {
-              // console.log('error')
-            })
-        }
-      })
-      .catch((e) => {
-        // window.alert('Conection Error')
-      })
-    db.getItem('unnecessary')
-      .then ((value) => {
-        this.unnecessary = value
-        if (!value) {
-          db.setItem('unnecessary', 0)
-            .then(() => {
-              // console.log('success')
-            })
-            .error((e) => {
-              // console.log('error')
-            })
-        }
-      })
-      .catch((e) => {
-        // window.alert('Conection Error')
-      })
+    console.log(this.necessary)
   },
   methods: {
     reset: function () {
