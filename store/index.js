@@ -12,6 +12,10 @@ const store = () => new Vuex.Store({
     },
     update_unnecessary (state, value) {
       state.unnecessary += eval(value)
+    },
+    reset (state) {
+      state.necessary = 0
+      state.unnecessary = 0
     }
   }
 })

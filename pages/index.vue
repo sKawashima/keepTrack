@@ -15,7 +15,7 @@
       p {{ unnecessary }}円
   #input
     nuxt-link(to='input').button.is-large.is-primary 入力
-    .button リセット
+    .button(@click='reset') リセット
 </template>
 
 <script>
@@ -34,6 +34,15 @@ export default {
   mounted () {
     this.necessary = this.$store.state.necessary
     this.unnecessary = this.$store.state.unnecessary
+  },
+  methods: {
+    reset: function () {
+      if (confirm('本当にリセットしてよろしいですか？')) {
+        this.$store.commit('reset')
+        this.necessary = this.$store.state.necessary
+        this.unnecessary = this.$store.state.unnecessary
+      }
+    }
   }
 }
 </script>
