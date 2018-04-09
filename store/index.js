@@ -18,13 +18,14 @@ function setDB(value) {
 const store = () => new Vuex.Store({
   state: {
     necessary: 0,
-    unnecessary: 0
+    unnecessary: 0,
+    setDB: false
   },
   mutations: {
     set_necessary (state, statistics) {
       if (statistics['0'] !== '') state.necessary = eval(statistics['0'])
       if (statistics['1'] !== '') state.unnecessary = eval(statistics['1'])
-      console.log(statistics)
+      state.setDB = true
     },
     update_necessary (state, value) {
       if (value !== '') state.necessary += eval(value)

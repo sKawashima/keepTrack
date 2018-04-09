@@ -21,13 +21,12 @@ export default {
     })
     db.getItem('statistics')
       .then((value) => {
-        console.log(value)
         if (value) {
           this.$store.commit('set_necessary', value)
         } else {
           db.setItem('statistics', [0, 0])
             .then(() => {
-              console.log('set')
+              this.$store.commit('set_necessary', [0, 0])
             })
             .catch((e) => {})
         }

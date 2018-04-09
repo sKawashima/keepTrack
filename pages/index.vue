@@ -32,9 +32,7 @@ export default {
     }
   },
   mounted () {
-    this.necessary = this.$store.state.necessary
-    this.unnecessary = this.$store.state.unnecessary
-    console.log(this.necessary)
+    this.getDB()
   },
   methods: {
     reset: function () {
@@ -42,6 +40,14 @@ export default {
         this.$store.commit('reset')
         this.necessary = this.$store.state.necessary
         this.unnecessary = this.$store.state.unnecessary
+      }
+    },
+    getDB: function () {
+      if (this.$store.state.setDB) {
+        this.necessary = this.$store.state.necessary
+        this.unnecessary = this.$store.state.unnecessary
+      } else {
+        setInterval(this.getDB, 10)
       }
     }
   }
